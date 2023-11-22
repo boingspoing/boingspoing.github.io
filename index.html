@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>File Writer</title>
 </head>
@@ -10,38 +7,9 @@
   <center>
     Oi! This website ain't finished.
     <br>
-    <button id="writeToFile">This is a button, if you don't like buttons, don't click it.</button>
+    <button>This is a button, if you don't like buttons, don't click it.</button>
     <br>
     Hey you! If you like the Punjab FC, I don't care.
   </center>
-
-  <script>
-    document.getElementById('writeToFile').addEventListener('click', function() {
-      const textToWrite = 'Hello, this is the text to be written to the file!';
-
-      // Create a new Gist using GitHub API
-      fetch('https://api.github.com/gists', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          description: 'Text File',
-          public: true,
-          files: {
-            'file.txt': {
-              content: textToWrite,
-            },
-          },
-        }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        alert('Text written to file! Check the Gist for the content.');
-      })
-      .catch(error => console.error('Error:', error));
-    });
-  </script>
 </body>
 </html>
